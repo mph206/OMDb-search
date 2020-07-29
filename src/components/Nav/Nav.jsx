@@ -6,10 +6,6 @@ import descending from './sort-numeric-down.svg';
 
 
 class Nav extends Component {
-
-    state = {
-        sortAscending: false,
-    }
     
     render() { 
         return ( 
@@ -18,7 +14,7 @@ class Nav extends Component {
                 <section>
                     <input id='searchbox' type="text" onChange={this.props.handleSearch} placeholder='Search by movie and year'/>
                     <label htmlFor='searchbox'><img className={styles.searchIcon} src={search} alt="Search"></img></label>
-                    <img onClick={() => this.setState({sortAscending: !this.state.sortAscending})} className={styles.sortIcon} src={this.state.sortAscending ? ascending : descending} alt={this.state.sortAscending ? 'Sort by year: ascending' : 'Sort by year: descending'}/>
+                    <img onClick={this.props.handleSort} className={styles.sortIcon} src={this.props.sortAscending ? ascending : descending} alt={this.props.sortAscending ? 'Sort by year: ascending' : 'Sort by year: descending'}/>
                 </section>
             </div>
          );

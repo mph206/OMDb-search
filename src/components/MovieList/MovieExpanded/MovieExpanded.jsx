@@ -22,7 +22,7 @@ class MovieExpanded extends Component {
     //SX300
     renderData = () => {
         if (this.state.extendedData) { 
-            const { Poster, Title, Year, Rated, Plot, Genre, Ratings } = this.state.extendedData;
+            const { Poster, Title, Year, Plot, Genre } = this.state.extendedData;
             return (
                 <div className={styles.dataContainer}>
                     <img src={Poster !== 'N/A' ? Poster : Placeholder} alt="Movie Poster"/> 
