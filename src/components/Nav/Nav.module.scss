@@ -29,13 +29,17 @@
             background-color: transparent;
             outline: none;
             border-bottom: 1px solid white;
-            width: 180px;
+            width: 150px;
             color: white;
-            margin-right: 25px;
+            margin-right: 55px;
             font-size: 1em;
             padding: 0;
             padding-right: 5px;
             height: 50px;
+
+            @media (min-width: 350px) {
+                width: 200px;
+            }
 
             @media (min-width: 560px) {
                 width: 280px;
@@ -48,16 +52,27 @@
             
         }
 
-        img {
+        .searchIcon {
             position: absolute;
             color: white;
             top: 50%;
             transform: translateY(-50%);
-            right: 0;
+            right: 0px;
             width: 24px;
             height: 24px;
             fill: white;
-            // z-index: 100;
+        }
+
+        .sortIcon {
+            position: absolute;
+            color: white;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 30px;
+            width: 24px;
+            height: 24px;
+            fill: white;
+            cursor: pointer;
         }
     }
  }

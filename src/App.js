@@ -6,7 +6,6 @@ import MovieList from './components/MovieList';
 class App extends Component {
   state = {
     apiKey: process.env.REACT_APP_API_KEY,
-    // movieData: [],
     searchTerm: '',
   }
 
@@ -28,10 +27,8 @@ class App extends Component {
         searchArray = [event.target.value.substring(0, indexOfYearStart - 1).split(' ').join('+'), event.target.value.substring(indexOfYearStart)];
       } 
       apiRequest = `http://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=${searchArray[0]}&y=${searchArray[1]}`
-      // console.log(`http://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=${searchArray[0]}&y=${searchArray[1]}`)
     } else {
       apiRequest = `http://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=${event.target.value.split(' ').join('+')}`
-      // console.log(`http://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=${event.target.value.split(' ').join('+')}`)
     }
     fetch(apiRequest)
     .then(response => response.json())
@@ -39,10 +36,19 @@ class App extends Component {
     .catch(error => console.log(error))
   }
 
+   sortByYear = () => {
+      if (event.target.value === 'new-to-old') {
+          parseInt(this.movieData.Year).sort((a, b) => {
+              console.log(a - b)
+              return a - b;
+          })
+      }
+   }
+
   render() {
     return (
       <div className={styles.App}>
-        <Nav handleSearch={this.searchTitle}/>
+        <Nav handleSearch={this.searchTitle} movieData={this.movieData} sortByYear={this.sortByYear}/>
         <MovieList movieData={this.state.movieData}/>
       </div>
     );
