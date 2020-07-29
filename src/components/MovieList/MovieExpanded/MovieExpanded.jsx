@@ -25,7 +25,7 @@ class MovieExpanded extends Component {
             const { Poster, Title, Year, Plot, Genre } = this.state.extendedData;
             return (
                 <div className={styles.dataContainer}>
-                    <img src={Poster !== 'N/A' ? Poster : Placeholder} alt="Movie Poster"/> 
+                    <img className={styles.poster} src={Poster !== 'N/A' ? Poster : Placeholder} alt="Movie Poster"/> 
                     <div className={styles.movieText}>
                         <h3>{Title} ({Year})</h3>
                         <p>{Plot}</p>
