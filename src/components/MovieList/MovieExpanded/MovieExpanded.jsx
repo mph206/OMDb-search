@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './MovieExpanded.module.scss';
-import Placeholder from '../MovieCard/Placeholder.png';
+import Placeholder from '../MovieCard/Placeholder.jpg';
 import Rotten from './Rotten_Tomatoes.svg';
 import IMDb from './IMDb.svg';
 import Metacritic from './Metacritic.svg';

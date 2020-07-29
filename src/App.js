@@ -20,8 +20,19 @@ class App extends Component {
   handleSort = () => {
     this.setState({sortAscending: !this.state.sortAscending}, this.sortByYear())
   }
+
+  sortByYear = () => {
+    const sortedArray = this.state.movieData.sort((a, b) => {
+      let x = parseInt(a['Year']);
+      let y = parseInt(b['Year']);
+      return (x < y ? 1 : x > y ? -1 : 0);
+    })
+    this.state.sortAscending 
+    ? this.setState({movieData: sortedArray})
+    : this.setState({movieData: sortedArray.reverse()})
+ }
   
-  searchTitle = (event) => {
+  searchTitleAndYear = (event) => {
     const indexOfYearStart = event.target.value.search(/[0-9][0-9][0-9][0-9]/);
     let searchArray = [event.target.value];
     let apiRequest = '';
@@ -41,21 +52,10 @@ class App extends Component {
     .catch(error => console.log(error))
   }
 
-   sortByYear = () => {
-      const sortedArray = this.state.movieData.sort((a, b) => {
-        let x = parseInt(a['Year']);
-        let y = parseInt(b['Year']);
-        return (x < y ? 1 : x > y ? -1 : 0);
-      })
-      this.state.sortAscending 
-      ? this.setState({movieData: sortedArray})
-      : this.setState({movieData: sortedArray.reverse()})
-   }
-
   render() {
     return (
       <div className={styles.App}>
-        <Nav handleSearch={this.searchTitle} movieData={this.statemovieData} sortByYear={this.sortByYear} handleSort={this.handleSort} sortAscending={this.state.sortAscending}/>
+        <Nav handleSearch={this.searchTitleAndYear} movieData={this.statemovieData} sortByYear={this.sortByYear} handleSort={this.handleSort} sortAscending={this.state.sortAscending}/>
         <MovieList movieData={this.state.movieData}/>
       </div>
     );

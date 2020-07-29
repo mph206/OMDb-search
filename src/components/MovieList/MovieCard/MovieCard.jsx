@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './MovieCard.module.scss';
-import Placeholder from './Placeholder.png';
+import Placeholder from './Placeholder.jpg';
 import MovieExpanded from '../MovieExpanded';
 
 class MovieCard extends Component {
