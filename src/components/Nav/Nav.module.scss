@@ -1,0 +1,26 @@
+ .navbar {
+     background-color: black;
+     color: white;
+     display: flex;
+     justify-content: space-between;
+     padding: 1em;
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100vw;
+     z-index: 2;
+     
+     input {
+        background-color: transparent;
+        outline: none;
+        border-bottom: 1px solid white;
+        width: 300px;
+        color: white;
+
+        &:focus, 
+        &:active {
+            border-bottom: 2px solid white;
+        }
+         
+     }
+ }
