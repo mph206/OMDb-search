@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/OMDb-search/static/css/main.5b23a74d.chunk.css",
+    "main.js": "/OMDb-search/static/js/main.ff943ed5.chunk.js",
+    "main.js.map": "/OMDb-search/static/js/main.ff943ed5.chunk.js.map",
+    "runtime-main.js": "/OMDb-search/static/js/runtime-main.64a60cf1.js",
+    "runtime-main.js.map": "/OMDb-search/static/js/runtime-main.64a60cf1.js.map",
+    "static/js/2.206e6029.chunk.js": "/OMDb-search/static/js/2.206e6029.chunk.js",
+    "static/js/2.206e6029.chunk.js.map": "/OMDb-search/static/js/2.206e6029.chunk.js.map",
+    "index.html": "/OMDb-search/index.html",
+    "precache-manifest.e286be881a89c90a588ba5caafc91c0a.js": "/OMDb-search/precache-manifest.e286be881a89c90a588ba5caafc91c0a.js",
+    "service-worker.js": "/OMDb-search/service-worker.js",
+    "static/css/main.5b23a74d.chunk.css.map": "/OMDb-search/static/css/main.5b23a74d.chunk.css.map",
+    "static/js/2.206e6029.chunk.js.LICENSE.txt": "/OMDb-search/static/js/2.206e6029.chunk.js.LICENSE.txt",
+    "static/media/IMDb.svg": "/OMDb-search/static/media/IMDb.fafe1550.svg",
+    "static/media/Metacritic.svg": "/OMDb-search/static/media/Metacritic.bc858665.svg",
+    "static/media/Rotten_Tomatoes.svg": "/OMDb-search/static/media/Rotten_Tomatoes.d7ea325d.svg",
+    "static/media/search-solid.svg": "/OMDb-search/static/media/search-solid.4e445a76.svg",
+    "static/media/sort-numeric-down.svg": "/OMDb-search/static/media/sort-numeric-down.58c8bfe1.svg",
+    "static/media/sort-numeric-up.svg": "/OMDb-search/static/media/sort-numeric-up.81eeb09d.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.64a60cf1.js",
+    "static/js/2.206e6029.chunk.js",
+    "static/css/main.5b23a74d.chunk.css",
+    "static/js/main.ff943ed5.chunk.js"
+  ]
+}
