@@ -7,7 +7,7 @@ class App extends Component {
   state = {
     apiKey: process.env.REACT_APP_API_KEY,
     searchTerm: '',
-    sortAscending: false,
+    sortAscending: true,
   }
 
   componentDidMount() {
