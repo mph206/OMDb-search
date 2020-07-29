@@ -21,12 +21,20 @@ class App extends Component {
     const indexOfYearStart = event.target.value.search(/[0-9][0-9][0-9][0-9]/);
     let searchArray = [event.target.value];
     console.log(indexOfYearStart)
-    indexOfYearStart !== -1 && indexOfYearStart === 0 
-    ? searchArray = [event.target.value.substring(5).split(' ').join('+'), event.target.value.substring(0,4)]
-    : searchArray = [event.target.value.substring(0, indexOfYearStart - 1).split(' ').join('+'), event.target.value.substring(indexOfYearStart)]
-    // console.log(searchArray)
-    // console.log(`http://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=${searchArray[0]}&y=${searchArray[1]}`);
-    fetch(`http://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=${searchArray[0]}&y=${searchArray[1]}`)
+    let apiRequest = '';
+    if (indexOfYearStart !== -1) {
+      if (indexOfYearStart === 0) {
+        searchArray = [event.target.value.substring(5).split(' ').join('+'), event.target.value.substring(0,4)];
+      } else {
+        searchArray = [event.target.value.substring(0, indexOfYearStart - 1).split(' ').join('+'), event.target.value.substring(indexOfYearStart)];
+      } 
+      apiRequest = `http://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=${searchArray[0]}&y=${searchArray[1]}`
+      console.log(`http://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=${searchArray[0]}&y=${searchArray[1]}`)
+    } else {
+      apiRequest = `http://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=${event.target.value.split(' ').join('+')}`
+      console.log(`http://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=${event.target.value.split(' ').join('+')}`)
+    }
+    fetch(apiRequest)
     .then(response => response.json())
     .then(data => this.setState({movieData: data.Search}))
     .catch(error => console.log(error))
