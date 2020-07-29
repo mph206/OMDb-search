@@ -17,7 +17,7 @@ class MovieCard extends Component {
     }
 
     render() { 
-        const { Poster, Title, Year, Type} = this.props.movieData;
+        const { Poster, Title, Year } = this.props.movieData;
         return ( 
             <>
                 <div className={styles.movieCard} onClick={this.toggleExpand}>

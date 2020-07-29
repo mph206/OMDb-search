@@ -3,6 +3,7 @@
      backdrop-filter: blur(10px);
      color: white;
      display: flex;
+     align-items: center;
      justify-content: space-between;
      padding: 1em;
      position: fixed;
@@ -10,20 +11,53 @@
      left: 0;
      width: 100%;
      z-index: 2;
-     
-     input {
-        border-style: none;
-        background-color: transparent;
-        outline: none;
-        border-bottom: 1px solid white;
-        width: 300px;
-        color: white;
-        margin-right: 15px;
 
-        &:focus, 
-        &:active {
-            border-bottom: 2px solid white;
+     h1 {
+        margin: 0;
+        font-size: 1.5em;
+
+        @media (min-width: 500px) {
+            font-size: 2em;
         }
-         
      }
+     
+     section {
+        position: relative;
+
+        input {
+            border-style: none;
+            background-color: transparent;
+            outline: none;
+            border-bottom: 1px solid white;
+            width: 180px;
+            color: white;
+            margin-right: 25px;
+            font-size: 1em;
+            padding: 0;
+            padding-right: 5px;
+            height: 50px;
+
+            @media (min-width: 560px) {
+                width: 280px;
+            }
+
+            &:focus, 
+            &:active {
+                border-bottom: 2px solid white;
+            }
+            
+        }
+
+        img {
+            position: absolute;
+            color: white;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            width: 24px;
+            height: 24px;
+            fill: white;
+            // z-index: 100;
+        }
+    }
  }

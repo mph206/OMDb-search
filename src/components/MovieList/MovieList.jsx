@@ -9,7 +9,7 @@ class MovieList extends Component {
                 <MovieCard movieData={movie} key={index}/>
             )
         })
-        : null
+        : <h2>Search for a movie</h2>
     }
 
     render() { 

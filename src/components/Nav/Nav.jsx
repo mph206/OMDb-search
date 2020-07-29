@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import styles from './Nav.module.scss'
+import styles from './Nav.module.scss';
+import search from './search-solid.svg';
 
 class Nav extends Component {
     
@@ -7,7 +8,10 @@ class Nav extends Component {
         return ( 
             <div className={styles.navbar}>
                 <h1>OMDb Search</h1>
-                <input type="text" onChange={this.props.handleSearch} placeholder='Search by movie or year'/>
+                <section>
+                    <input id='searchbox' type="text" onChange={this.props.handleSearch} placeholder='Search by movie and year'/>
+                    <label htmlFor='searchbox'><img src={search} alt="Search"></img></label>
+                </section>
             </div>
          );
     }
