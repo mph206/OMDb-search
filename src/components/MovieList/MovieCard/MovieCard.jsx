@@ -1,17 +1,32 @@
 import React, { Component } from 'react';
 import styles from './MovieCard.module.scss';
 import Placeholder from './Placeholder.png';
+import MovieExpanded from '../MovieExpanded';
 
 class MovieCard extends Component {
-    
+    state = {
+        displayExpand: false,
+    }
+
+    expandMovie = () => {
+        return this.state.displayExpand ? <MovieExpanded movieData={this.props.movieData} toggleExpand={this.toggleExpand}/> : null;
+    }
+
+    toggleExpand = () => {
+        this.setState({displayExpand: !this.state.displayExpand})
+    }
+
     render() { 
         const { Poster, Title, Year, Type} = this.props.movieData;
         return ( 
-            <div className={styles.movieCard}>
-                <img src={Poster !== 'N/A' ? Poster : Placeholder} alt="Movie Poster"/>
-                <h3>{Title} - {Year}</h3>
-            </div>
-         );
+            <>
+                <div className={styles.movieCard} onClick={this.toggleExpand}>
+                    <img src={Poster !== 'N/A' ? Poster : Placeholder} alt="Movie Poster"/>
+                    <h3>{Title} ({Year})</h3>
+                </div>
+                {this.expandMovie()}
+            </>
+        );
     }
 }
  

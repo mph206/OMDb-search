@@ -1,19 +1,57 @@
 .MovieExpanded {
     position: fixed;
-    max-width: 100vw;
-    max-height: 100vh;
+    width: 100vw;
+    height: 100vh;
     top: 0;
     left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0,0,0,0.8);
+    color: white;
 
-    img {
-        max-width: 300px;
-    }
-    
-    h3 {
-        opacity: 0;
-        background-color: rgba(0,0,0,0.8);
-        color: white;
+    .exitCross {
         font-size: 2em;
+        position: fixed; 
+        right: 0;
+        top: 0;
+        margin: 10px 20px 10px;
+        cursor: pointer;
     }
+
+
+    .dataContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: auto;
+
+        @media (min-width: 500px) {
+            flex-direction: row;
+        }
+
+     
+        img {
+            display: block;
+            padding: 2em;
+            width: 600px;
+            height: auto;
+            margin-top: 90px;
+        }
+
+        .movieText {
+            padding: 2em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h3 {
+                font-size: 2em;
+            }
+        }
+    }  
 
 }

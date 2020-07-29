@@ -1,7 +1,12 @@
 .movieCard {
     position: relative;
     max-width: 300px;
-    // margin: 0.5em;
+    cursor: pointer;
+
+    img, h3 {
+        width: 100%;
+        height: 100%;
+    }
 
     img {
         max-width: 300px;
@@ -10,12 +15,15 @@
     h3 {
         opacity: 0;
         background-color: rgba(0,0,0,0.8);
+        backdrop-filter: blur(10px);
         color: white;
         position: absolute;
-        bottom: 10%; 
-        // transform: translateY(50%);
+        top: 0;
         left: 0;
         font-size: 2em;
+        transition-duration: 1s;
+        padding: 1em;
+        margin: 0;
     }
 
     &:hover h3 {
