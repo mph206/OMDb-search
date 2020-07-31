@@ -6,7 +6,7 @@ class MovieList extends Component {
     renderCards = () => {
         return this.props.movieData ? this.props.movieData.map((movie, index) => {
             return (
-                <MovieCard movieData={movie} key={index}/>
+                <MovieCard movieData={movie} key={index} apiKey={this.props.apiKey}/>
             )
         })
         : <h2>Search for a movie</h2>

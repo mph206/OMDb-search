@@ -9,11 +9,11 @@ import Metacritic from './Metacritic.svg';
 class MovieExpanded extends Component {
 
     state = {
-
+        
     }
 
     componentDidMount() {
-        fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&i=${this.props.movieData.imdbID}`)
+        fetch(`http://www.omdbapi.com/?apikey=${this.props.apiKey}&i=${this.props.movieData.imdbID}`)
         .then(response => response.json())
         .then(data => {this.setState({extendedData: data})})
         .catch(error => console.log(error))

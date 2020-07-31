@@ -9,7 +9,7 @@ class MovieCard extends Component {
     }
 
     expandMovie = () => {
-        return this.state.displayExpand ? <MovieExpanded movieData={this.props.movieData} toggleExpand={this.toggleExpand}/> : null;
+        return this.state.displayExpand ? <MovieExpanded apiKey={this.props.apiKey} movieData={this.props.movieData} toggleExpand={this.toggleExpand}/> : null;
     }
 
     toggleExpand = () => {

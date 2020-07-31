@@ -5,7 +5,7 @@ import MovieList from './components/MovieList';
 
 class App extends Component {
   state = {
-    apiKey: process.env.REACT_APP_API_KEY,
+    apiKey: 'c55f9d1a',
     searchTerm: '',
     sortAscending: true,
   }
@@ -56,7 +56,7 @@ class App extends Component {
     return (
       <div className={styles.App}>
         <Nav handleSearch={this.searchTitleAndYear} movieData={this.statemovieData} sortByYear={this.sortByYear} handleSort={this.handleSort} sortAscending={this.state.sortAscending}/>
-        <MovieList movieData={this.state.movieData}/>
+        <MovieList movieData={this.state.movieData} apiKey={this.state.apiKey}/>
       </div>
     );
   }
