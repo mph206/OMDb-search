@@ -13,7 +13,7 @@ class MovieExpanded extends Component {
     }
 
     componentDidMount() {
-        fetch(`http://www.omdbapi.com/?apikey=${this.props.apiKey}&i=${this.props.movieData.imdbID}`)
+        fetch(`https://www.omdbapi.com/?apikey=${this.props.apiKey}&i=${this.props.movieData.imdbID}`)
         .then(response => response.json())
         .then(data => {this.setState({extendedData: data})})
         .catch(error => console.log(error))

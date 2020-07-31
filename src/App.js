@@ -11,7 +11,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=star+Wars`)
+    fetch(`https://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=star+Wars`)
     .then(response => response.json())
     .then(data => this.setState({movieData: data.Search}))
     .catch(error => console.log(error))
@@ -42,9 +42,9 @@ class App extends Component {
       } else {
         searchArray = [event.target.value.substring(0, indexOfYearStart - 1).split(' ').join('+'), event.target.value.substring(indexOfYearStart)];
       } 
-      apiRequest = `http://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=${searchArray[0]}&y=${searchArray[1]}`
+      apiRequest = `https://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=${searchArray[0]}&y=${searchArray[1]}`
     } else {
-      apiRequest = `http://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=${event.target.value.split(' ').join('+')}`
+      apiRequest = `https://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=${event.target.value.split(' ').join('+')}`
     }
     fetch(apiRequest)
     .then(response => response.json())
