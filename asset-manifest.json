@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/OMDb-search/static/css/main.ab21badc.chunk.css",
-    "main.js": "/OMDb-search/static/js/main.3dbe0582.chunk.js",
-    "main.js.map": "/OMDb-search/static/js/main.3dbe0582.chunk.js.map",
+    "main.js": "/OMDb-search/static/js/main.5c316806.chunk.js",
+    "main.js.map": "/OMDb-search/static/js/main.5c316806.chunk.js.map",
     "runtime-main.js": "/OMDb-search/static/js/runtime-main.64a60cf1.js",
     "runtime-main.js.map": "/OMDb-search/static/js/runtime-main.64a60cf1.js.map",
     "static/js/2.206e6029.chunk.js": "/OMDb-search/static/js/2.206e6029.chunk.js",
     "static/js/2.206e6029.chunk.js.map": "/OMDb-search/static/js/2.206e6029.chunk.js.map",
     "index.html": "/OMDb-search/index.html",
-    "precache-manifest.90c1356a56d90de5bb29721d138aa5f9.js": "/OMDb-search/precache-manifest.90c1356a56d90de5bb29721d138aa5f9.js",
+    "precache-manifest.aa967c496f0e126ca09a1a4cda62a536.js": "/OMDb-search/precache-manifest.aa967c496f0e126ca09a1a4cda62a536.js",
     "service-worker.js": "/OMDb-search/service-worker.js",
     "static/css/main.ab21badc.chunk.css.map": "/OMDb-search/static/css/main.ab21badc.chunk.css.map",
     "static/js/2.206e6029.chunk.js.LICENSE.txt": "/OMDb-search/static/js/2.206e6029.chunk.js.LICENSE.txt",
@@ -23,6 +23,6 @@
     "static/js/runtime-main.64a60cf1.js",
     "static/js/2.206e6029.chunk.js",
     "static/css/main.ab21badc.chunk.css",
-    "static/js/main.3dbe0582.chunk.js"
+    "static/js/main.5c316806.chunk.js"
   ]
 }
