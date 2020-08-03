@@ -13,7 +13,7 @@ class MovieExpanded extends Component {
     }
 
     componentDidMount() {
-        fetch(`https://www.omdbapi.com/?apikey=${this.props.apiKey}&i=${this.props.movieData.imdbID}`)
+        fetch(`https://enigmatic-garden-24045.herokuapp.com/omdb?i=${this.props.movieData.imdbID}`)
         .then(response => response.json())
         .then(data => {this.setState({extendedData: data})})
         .catch(error => console.log(error))

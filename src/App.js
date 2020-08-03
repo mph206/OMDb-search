@@ -5,16 +5,16 @@ import MovieList from './components/MovieList';
 
 class App extends Component {
   state = {
-    apiKey: 'c55f9d1a',
     searchTerm: '',
     sortAscending: true,
   }
 
   componentDidMount() {
-    fetch(`https://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=star+Wars`)
+    fetch(`https://enigmatic-garden-24045.herokuapp.com/omdb?t=movie&s=star+wars`)
     .then(response => response.json())
     .then(data => this.setState({movieData: data.Search}))
     .catch(error => console.log(error))
+    
   }
 
   handleSort = () => {
@@ -42,9 +42,9 @@ class App extends Component {
       } else {
         searchArray = [event.target.value.substring(0, indexOfYearStart - 1).split(' ').join('+'), event.target.value.substring(indexOfYearStart)];
       } 
-      apiRequest = `https://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=${searchArray[0]}&y=${searchArray[1]}`
+      apiRequest = `https://enigmatic-garden-24045.herokuapp.com/omdb?type=movie&s=${searchArray[0]}&y=${searchArray[1]}`
     } else {
-      apiRequest = `https://www.omdbapi.com/?apikey=${this.state.apiKey}&type=movie&s=${event.target.value.split(' ').join('+')}`
+      apiRequest = `https://enigmatic-garden-24045.herokuapp.com/omdb?type=movie&s=${event.target.value.split(' ').join('+')}`
     }
     fetch(apiRequest)
     .then(response => response.json())
@@ -56,7 +56,7 @@ class App extends Component {
     return (
       <div className={styles.App}>
         <Nav handleSearch={this.searchTitleAndYear} movieData={this.statemovieData} sortByYear={this.sortByYear} handleSort={this.handleSort} sortAscending={this.state.sortAscending}/>
-        <MovieList movieData={this.state.movieData} apiKey={this.state.apiKey}/>
+        <MovieList movieData={this.state.movieData}/>
       </div>
     );
   }
