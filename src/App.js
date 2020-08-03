@@ -19,7 +19,9 @@ class App extends Component {
   }
 
   handleSort = () => {
-    this.setState({sortAscending: !this.state.sortAscending}, this.sortByYear())
+    if (this.state.movieData?.length) {
+      this.setState({sortAscending: !this.state.sortAscending}, this.sortByYear())
+    }
   }
 
   sortByYear = () => {
