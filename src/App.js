@@ -7,6 +7,7 @@ class App extends Component {
   state = {
     searchTerm: '',
     sortAscending: true,
+    movieData: [],
   }
 
   componentDidMount() {
@@ -59,7 +60,7 @@ class App extends Component {
   render() {
     return (
       <div className={styles.App}>
-        <Nav handleSearch={this.searchTitleAndYear} movieData={this.statemovieData} sortByYear={this.sortByYear} handleSort={this.handleSort} sortAscending={this.state.sortAscending}/>
+        <Nav handleSearch={this.searchTitleAndYear} handleSort={this.handleSort} sortAscending={this.state.sortAscending}/>
         <MovieList movieData={this.state.movieData}/>
       </div>
     );
