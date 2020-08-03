@@ -46,6 +46,10 @@ class App extends Component {
     } else {
       apiRequest = `https://enigmatic-garden-24045.herokuapp.com/omdb?type=movie&s=${event.target.value.split(' ').join('+')}`
     }
+    this.fetchResults(apiRequest)
+  }
+
+  fetchResults = (apiRequest) => {
     fetch(apiRequest)
     .then(response => response.json())
     .then(data => this.setState({movieData: data.Search}))
